@@ -1,0 +1,361 @@
+/* =========================
+   1. ĐỊNH DẠNG CHUNG CHO TOÀN BỘ TRANG
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #f0f4f8;
+    margin: 0;
+}
+
+/* =========================
+   2. FLEXBOX: XẾP TÊN VÀ LỜI CHÀO THEO CỘT, CĂN GIỮA
+========================= */
+
+body > header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    background-color: #b9b0eb;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+body > header h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+body > header > p {
+    margin: 0;
+}
+
+/* =========================
+   3. THANH ĐIỀU HƯỚNG
+========================= */
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   4. CSS GRID: CHIA NỘI DUNG CHÍNH THÀNH 2 CỘT
+   TỈ LỆ 1 : 2
+========================= */
+
+main#home {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+/* =========================
+   5. CÁC PHẦN NỘI DUNG
+========================= */
+
+#about,
+#projects,
+#skills,
+#contact {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #cccccc;
+}
+
+/* Giới thiệu và dự án chiếm toàn bộ chiều ngang */
+
+#about,
+#projects {
+    grid-column: 1 / -1;
+}
+
+/* Kỹ năng ở cột trái */
+
+#skills {
+    grid-column: 1;
+}
+
+/* Liên hệ ở cột phải */
+
+#contact {
+    grid-column: 2;
+}
+
+/* =========================
+   6. TIÊU ĐỀ
+========================= */
+
+h2 {
+    color: #333333;
+    margin-top: 0;
+}
+
+h3 {
+    color: #555555;
+}
+
+/* =========================
+   7. PHẦN GIỚI THIỆU
+========================= */
+
+#about figure {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#about figure img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#about figcaption {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#about dl {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 8px;
+}
+
+#about dt {
+    font-weight: bold;
+}
+
+#about dd {
+    margin: 0;
+}
+
+#about a {
+    color: #3333cc;
+}
+
+/* =========================
+   8. PHẦN DỰ ÁN
+========================= */
+
+#projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+#projects > h2,
+#projects > p {
+    grid-column: 1 / -1;
+}
+
+#projects article {
+    border: 1px solid #cccccc;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#projects article header {
+    background-color: transparent;
+    color: #333333;
+    text-align: left;
+    padding: 0;
+}
+
+#projects article header h3 {
+    margin: 0;
+}
+
+#projects article header p {
+    margin: 5px 0;
+    color: #666666;
+}
+
+#projects article > img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+#projects article ul {
+    padding-left: 20px;
+}
+
+#projects article footer {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+#projects article footer a {
+    background-color: #b9b0eb;
+    color: white;
+    padding: 7px 12px;
+    text-decoration: none;
+}
+
+#projects article footer a:hover {
+    background-color: #9990d0;
+}
+
+/* =========================
+   9. PHẦN KỸ NĂNG - FLEXBOX
+========================= */
+
+#skills section {
+    margin-bottom: 25px;
+}
+
+#skills dl {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#skills dt {
+    background-color: #b9b0eb;
+    color: white;
+    padding: 8px 12px;
+    font-weight: bold;
+}
+
+#skills dd {
+    margin: 0;
+    padding: 8px 12px;
+    background-color: #eeeeee;
+    flex: 1 1 200px;
+}
+
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    list-style: none;
+    padding: 0;
+}
+
+#skills ul li {
+    background-color: #eeeeee;
+    padding: 8px 12px;
+}
+
+/* =========================
+   10. FORM LIÊN HỆ - FLEXBOX
+========================= */
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact form > div {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 10px;
+
+    border: 1px solid #cccccc;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+#contact textarea {
+    resize: vertical;
+}
+
+#contact button {
+    padding: 10px;
+
+    border: none;
+    background-color: #b9b0eb;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#contact button:hover {
+    background-color: #9990d0;
+}
+
+/* =========================
+   11. FOOTER - FLEXBOX
+========================= */
+
+body > footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    background-color: #b9b0eb;
+    color: white;
+    padding: 20px;
+}
+
+body > footer address {
+    font-style: normal;
+}
+
+body > footer p {
+    margin: 0;
+}
+
+footer nav ul {
+    display: flex;
+    gap: 20px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer nav a {
+    color: white;
+    text-decoration: none;
+}
