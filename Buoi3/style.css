@@ -10,13 +10,13 @@ body {
     font-family: Arial, sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    color: #333333;
-    background-color: #f0f4f8;
+    color: #1f2937;
+    background-color: #f3f6fb;
     margin: 0;
 }
 
 /* =========================
-   2. FLEXBOX: XẾP TÊN VÀ LỜI CHÀO THEO CỘT, CĂN GIỮA
+   2. HEADER & FLEXBOX
 ========================= */
 
 body > header {
@@ -25,14 +25,18 @@ body > header {
     align-items: center;
     gap: 10px;
 
-    background-color: #b9b0eb;
+    background: linear-gradient(135deg, #074adc, #da230b);
+
     color: white;
     text-align: center;
-    padding: 20px;
+
+    padding: 30px 20px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 body > header h1 {
-    font-size: 28px;
+    font-size: 32px;
     margin: 0;
 }
 
@@ -41,16 +45,17 @@ body > header > p {
 }
 
 /* =========================
-   3. THANH ĐIỀU HƯỚNG
+   3. THANH ĐIỀU HƯỚNG - FLEXBOX
 ========================= */
 
 header nav ul {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
 
     list-style: none;
-    margin: 0;
+    margin: 10px 0 0;
     padding: 0;
 }
 
@@ -58,25 +63,29 @@ header nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+
+    padding: 6px 12px;
+    border-radius: 6px;
 }
 
 header nav a:hover {
-    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* =========================
-   4. CSS GRID: CHIA NỘI DUNG CHÍNH THÀNH 2 CỘT
-   TỈ LỆ 1 : 2
+   4. MAIN - CSS GRID
 ========================= */
 
 main#home {
     width: 90%;
     max-width: 1200px;
-    margin: 20px auto;
+
+    margin: 30px auto;
 
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 20px;
+    grid-template-columns: 2fr 1fr;
+
+    gap: 25px;
 }
 
 /* =========================
@@ -86,29 +95,62 @@ main#home {
 #about,
 #projects,
 #skills,
-#contact {
+#contact,
+#services {
     background-color: white;
-    padding: 20px;
-    border: 1px solid #cccccc;
+
+    padding: 25px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-/* Giới thiệu và dự án chiếm toàn bộ chiều ngang */
+/* About và Projects chiếm toàn bộ chiều ngang */
 
 #about,
-#projects {
+#projects,
+#services {
     grid-column: 1 / -1;
 }
 
-/* Kỹ năng ở cột trái */
+/* Skills ở cột trái */
 
 #skills {
     grid-column: 1;
 }
 
-/* Liên hệ ở cột phải */
+/* Contact ở cột phải */
 
 #contact {
     grid-column: 2;
+}
+
+/* =========================
+   5.1 SERVICES - CSS GRID
+========================= */
+
+.services-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.service {
+    padding: 20px;
+
+    background-color: #f1f5f9;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.service h3 {
+    margin-top: 0;
+    color: #1f2937;
 }
 
 /* =========================
@@ -116,12 +158,16 @@ main#home {
 ========================= */
 
 h2 {
-    color: #333333;
+    color: #1f2937;
+
     margin-top: 0;
+    margin-bottom: 15px;
+
+    font-size: 24px;
 }
 
 h3 {
-    color: #555555;
+    color: #4b5563;
 }
 
 /* =========================
@@ -136,40 +182,62 @@ h3 {
 #about figure img {
     width: 200px;
     height: 200px;
+
     object-fit: cover;
+
     border-radius: 50%;
+
+    border: 5px solid #074adc;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 #about figcaption {
     margin-top: 10px;
+
     font-weight: bold;
+    color: #4b5563;
 }
 
 #about dl {
     display: grid;
+
     grid-template-columns: 120px 1fr;
-    gap: 8px;
+
+    gap: 10px;
 }
 
 #about dt {
     font-weight: bold;
+    color: #1f2937;
 }
 
 #about dd {
     margin: 0;
+    color: #4b5563;
 }
 
 #about a {
-    color: #3333cc;
+    color: #074adc;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+#about a:hover {
+    text-decoration: underline;
 }
 
 /* =========================
-   8. PHẦN DỰ ÁN
+   8. PHẦN DỰ ÁN - CSS GRID
 ========================= */
 
 #projects {
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
+
     gap: 20px;
 }
 
@@ -179,55 +247,83 @@ h3 {
 }
 
 #projects article {
-    border: 1px solid #cccccc;
-    padding: 15px;
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    padding: 18px;
+
+    background-color: #fafbff;
 
     display: flex;
     flex-direction: column;
+
     gap: 10px;
 }
 
 #projects article header {
     background-color: transparent;
-    color: #333333;
+
+    color: #1f2937;
+
     text-align: left;
+
     padding: 0;
+
+    box-shadow: none;
 }
 
 #projects article header h3 {
     margin: 0;
+
+    color: #1f2937;
 }
 
 #projects article header p {
     margin: 5px 0;
-    color: #666666;
+
+    color: #6b7280;
 }
 
 #projects article > img {
     width: 100%;
     height: 200px;
+
     object-fit: cover;
+
+    border-radius: 8px;
 }
 
 #projects article ul {
     padding-left: 20px;
+
+    color: #4b5563;
 }
 
 #projects article footer {
     display: flex;
+
     gap: 10px;
+
     margin-top: auto;
 }
 
 #projects article footer a {
-    background-color: #b9b0eb;
+    background-color: #da230b;
+
     color: white;
-    padding: 7px 12px;
+
+    padding: 8px 14px;
+
+    border-radius: 6px;
+
     text-decoration: none;
+
+    font-weight: bold;
 }
 
 #projects article footer a:hover {
-    background-color: #9990d0;
+    background-color: #074adc;
 }
 
 /* =========================
@@ -240,36 +336,60 @@ h3 {
 
 #skills dl {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 10px;
 }
 
 #skills dt {
-    background-color: #b9b0eb;
+    background: linear-gradient(135deg, #074adc, #da230b);
+
     color: white;
-    padding: 8px 12px;
+
+    padding: 8px 14px;
+
     font-weight: bold;
+
+    border-radius: 6px;
 }
 
 #skills dd {
     margin: 0;
+
     padding: 8px 12px;
-    background-color: #eeeeee;
+
+    background-color: #f1f5f9;
+
+    border-radius: 6px;
+
     flex: 1 1 200px;
+
+    color: #4b5563;
 }
 
 #skills ul {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 10px;
 
     list-style: none;
+
     padding: 0;
 }
 
 #skills ul li {
-    background-color: #eeeeee;
-    padding: 8px 12px;
+    background-color: #f1f5f9;
+
+    color: #4b5563;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    border: 1px solid #e5e7eb;
 }
 
 /* =========================
@@ -278,27 +398,38 @@ h3 {
 
 #contact form {
     display: flex;
+
     flex-direction: column;
+
     gap: 15px;
 }
 
 #contact form > div {
     display: flex;
+
     flex-direction: column;
 }
 
 #contact label {
     font-weight: bold;
+
     margin-bottom: 5px;
+
+    color: #4b5563;
 }
 
 #contact input,
 #contact textarea {
     width: 100%;
-    padding: 10px;
 
-    border: 1px solid #cccccc;
+    padding: 11px 12px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 7px;
+
     font-family: Arial, sans-serif;
+
     font-size: 15px;
 }
 
@@ -307,19 +438,25 @@ h3 {
 }
 
 #contact button {
-    padding: 10px;
+    padding: 11px;
+
+    border-radius: 7px;
 
     border: none;
-    background-color: #b9b0eb;
+
+    background: linear-gradient(135deg, #074adc, #da230b);
+
     color: white;
 
     font-size: 16px;
+
     font-weight: bold;
+
     cursor: pointer;
 }
 
 #contact button:hover {
-    background-color: #9990d0;
+    background-color: #074adc;
 }
 
 /* =========================
@@ -328,14 +465,22 @@ h3 {
 
 body > footer {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     gap: 20px;
+
     flex-wrap: wrap;
 
-    background-color: #b9b0eb;
+    background: linear-gradient(135deg, #074adc, #da230b);
+
     color: white;
-    padding: 20px;
+
+    padding: 25px 20px;
+
+    margin-top: 30px;
 }
 
 body > footer address {
@@ -348,14 +493,22 @@ body > footer p {
 
 footer nav ul {
     display: flex;
+
     gap: 20px;
 
     list-style: none;
+
     margin: 0;
+
     padding: 0;
 }
 
 footer nav a {
     color: white;
+
     text-decoration: none;
+}
+
+footer nav a:hover {
+    text-decoration: underline;
 }
