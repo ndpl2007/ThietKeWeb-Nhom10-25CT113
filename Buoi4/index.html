@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <!-- ============================================================
+       META & TIÊU ĐỀ TRANG
+       Khai báo bộ ký tự, viewport cho thiết bị di động và tiêu đề
+       hiển thị trên tab trình duyệt / kết quả tìm kiếm.
+  ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio cá nhân – Giới thiệu về tôi, các dự án tiêu biểu và kỹ năng chuyên môn." />
+  <meta name="author" content="Nguyễn Văn A" />
+  <title>Portfolio Cá Nhân | Nguyễn Văn A</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       HEADER – ĐẦU TRANG
+       Thẻ <header> đóng vai trò vùng tiêu đề toàn trang (site-wide).
+       Chứa tên/logo thương hiệu cá nhân và thanh điều hướng chính.
+  ============================================================ -->
+  <header>
+
+    <!-- Tên thương hiệu / logo cá nhân -->
+    <h1>Nguyễn Văn A</h1>
+    <p>Front-end Developer &amp; UI Designer</p>
+
+    <!-- --------------------------------------------------------
+         NAV – THANH ĐIỀU HƯỚNG CHÍNH
+         Thẻ <nav> xác định vùng điều hướng chính của trang.
+         Thuộc tính aria-label giúp công nghệ hỗ trợ (screen reader)
+         phân biệt nav này với các nav phụ khác trên trang.
+    -------------------------------------------------------- -->
+    <nav aria-label="Điều hướng chính">
+      <ul>
+        <li><a href="#home"     aria-current="page">Trang chủ</a></li>
+        <li><a href="#about"                       >Giới thiệu</a></li>
+        <li><a href="#projects"                    >Dự án</a></li>
+        <li><a href="#skills"                      >Kỹ năng</a></li>
+        <li><a href="#contact"                     >Liên hệ</a></li>
+      </ul>
+    </nav>
+
+  </header>
+  <!-- /HEADER -->
+
+
+  <!-- ============================================================
+       MAIN – NỘI DUNG CHÍNH
+       Thẻ <main> xác định vùng nội dung chính, duy nhất trên trang.
+       Giúp công nghệ hỗ trợ bỏ qua header/footer và đến thẳng
+       nội dung cốt lõi. Thuộc tính id="home" làm neo (anchor)
+       cho liên kết "Trang chủ" trong nav.
+  ============================================================ -->
+  <main id="home">
+
+
+    <!-- ==========================================================
+         SECTION 1 – GIỚI THIỆU TỔNG QUAN (HERO / ABOUT)
+         Giới thiệu ngắn gọn về bản thân, vai trò và định hướng
+         nghề nghiệp. Đây thường là phần đầu tiên người dùng thấy.
+    ========================================================== -->
+    <section id="about" aria-labelledby="about-heading">
+
+      <h2 id="about-heading">Giới thiệu</h2>
+
+      <!-- Ảnh đại diện kèm văn bản thay thế mô tả nội dung ảnh -->
+      <figure>
+        <img
+          src="assets/images/avatar.jpg"
+          alt="Ảnh chân dung của Nguyễn Văn A"
+          width="200"
+          height="200"
+        />
+        <figcaption>Nguyễn Văn A – Front-end Developer</figcaption>
+      </figure>
+
+      <!-- Tiểu sử ngắn -->
+      <article>
+        <h3>Xin chào, tôi là Nguyễn Văn A!</h3>
+        <p>
+          Tôi là một lập trình viên Front-end với hơn <strong>3 năm kinh nghiệm</strong>
+          trong việc xây dựng giao diện web hiện đại, thân thiện với người dùng
+          và tối ưu hóa hiệu suất.
+        </p>
+        <p>
+          Tốt nghiệp ngành <em>Công nghệ Thông tin</em> tại Đại học ABC, tôi có
+          niềm đam mê mạnh mẽ với thiết kế trải nghiệm người dùng (UX) và các
+          chuẩn web mở.
+        </p>
+
+        <!-- Thông tin cá nhân dạng danh sách mô tả -->
+        <dl>
+          <dt>Họ và tên</dt>
+          <dd>Nguyễn Văn A</dd>
+
+          <dt>Ngày sinh</dt>
+          <dd><time datetime="2000-01-15">15 tháng 01 năm 2000</time></dd>
+
+          <dt>Địa chỉ</dt>
+          <dd>Hà Nội, Việt Nam</dd>
+
+          <dt>Email</dt>
+          <dd><a href="mailto:nguyenvana@email.com">nguyenvana@email.com</a></dd>
+
+          <dt>Trạng thái</dt>
+          <dd>Đang tìm kiếm cơ hội mới</dd>
+        </dl>
+
+        <a href="assets/files/CV_NguyenVanA.pdf" download>Tải xuống CV (PDF)</a>
+      </article>
+
+    </section>
+    <!-- /SECTION 1 – GIỚI THIỆU -->
+
+
+    <!-- ==========================================================
+         SECTION 2 – DỰ ÁN TIÊU BIỂU
+         Trình bày các dự án nổi bật đã thực hiện. Mỗi dự án được
+         bọc trong thẻ <article> vì đây là đơn vị nội dung độc lập,
+         có thể tái sử dụng hoặc phân phối riêng lẻ.
+    ========================================================== -->
+    <section id="projects" aria-labelledby="projects-heading">
+
+      <h2 id="projects-heading">Dự án tiêu biểu</h2>
+      <p>Một số dự án tôi đã xây dựng và đóng góp:</p>
+
+      <!-- ---- Dự án 1 ----------------------------------------- -->
+      <article aria-labelledby="project1-title">
+        <header>
+          <!-- Header trong article chứa tiêu đề và metadata của dự án -->
+          <h3 id="project1-title">Website Thương mại điện tử – ShopNow</h3>
+          <p>
+            <time datetime="2024-06">Tháng 6, 2024</time> –
+            <span>Dự án cá nhân</span>
+          </p>
+        </header>
+        <img src="assets/images/project-shopnow.jpg"
+             alt="Ảnh chụp màn hình giao diện trang chủ của dự án ShopNow"
+             width="600" height="350" />
+        <p>Nền tảng mua sắm trực tuyến hỗ trợ đầy đủ luồng từ duyệt sản phẩm,
+           thêm vào giỏ hàng đến thanh toán.</p>
+        <ul>
+          <li>HTML5 &amp; CSS3</li>
+          <li>JavaScript (Vanilla)</li>
+          <li>REST API</li>
+        </ul>
+        <footer>
+          <!-- Footer trong article chứa các liên kết hành động -->
+          <a href="https://shopnow-demo.example.com" target="_blank" rel="noopener noreferrer">Xem Demo</a>
+          <a href="https://github.com/nguyenvana/shopnow" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </footer>
+      </article>
+
+      <!-- ---- Dự án 2 ----------------------------------------- -->
+      <article aria-labelledby="project2-title">
+        <header>
+          <h3 id="project2-title">Ứng dụng Quản lý Công việc – TaskFlow</h3>
+          <p><time datetime="2023-11">Tháng 11, 2023</time> – <span>Dự án nhóm</span></p>
+        </header>
+        <img src="assets/images/project-taskflow.jpg"
+             alt="Ảnh chụp màn hình bảng Kanban của ứng dụng TaskFlow"
+             width="600" height="350" />
+        <p>Ứng dụng quản lý công việc theo phương pháp Kanban, hỗ trợ làm việc nhóm thời gian thực.</p>
+        <ul>
+          <li>React.js</li>
+          <li>Node.js &amp; Express</li>
+          <li>WebSocket</li>
+          <li>MongoDB</li>
+        </ul>
+        <footer>
+          <a href="https://taskflow-demo.example.com" target="_blank" rel="noopener noreferrer">Xem Demo</a>
+          <a href="https://github.com/nguyenvana/taskflow" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </footer>
+      </article>
+
+      <!-- ---- Dự án 3 ----------------------------------------- -->
+      <article aria-labelledby="project3-title">
+        <header>
+          <h3 id="project3-title">Blog Cá nhân – DevNotes</h3>
+          <p><time datetime="2023-05">Tháng 5, 2023</time> – <span>Dự án cá nhân</span></p>
+        </header>
+        <img src="assets/images/project-devnotes.jpg"
+             alt="Ảnh chụp màn hình trang danh sách bài viết của DevNotes"
+             width="600" height="350" />
+        <p>Blog kỹ thuật đạt điểm Lighthouse <strong>100/100</strong> về hiệu suất và khả năng tiếp cận.</p>
+        <ul>
+          <li>Next.js (Static Export)</li>
+          <li>Markdown / MDX</li>
+          <li>Vercel Hosting</li>
+        </ul>
+        <footer>
+          <a href="https://devnotes.example.com" target="_blank" rel="noopener noreferrer">Xem Blog</a>
+          <a href="https://github.com/nguyenvana/devnotes" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </footer>
+      </article>
+
+    </section>
+    <!-- /SECTION 2 – DỰ ÁN -->
+
+    <!-- =========================
+     SECTION 3 – DỊCH VỤ
+========================= -->
+
+<section id="services">
+
+    <h2>Dịch vụ</h2>
+
+    <div class="services-container">
+
+        <div class="service">
+            <h3>Web Development</h3>
+            <p>Xây dựng website hiện đại và responsive.</p>
+        </div>
+
+        <div class="service">
+            <h3>UI/UX Design</h3>
+            <p>Thiết kế giao diện trực quan và dễ sử dụng.</p>
+        </div>
+
+        <div class="service">
+            <h3>Mobile Development</h3>
+            <p>Phát triển ứng dụng dành cho thiết bị di động.</p>
+        </div>
+
+        <div class="service">
+            <h3>SEO Optimization</h3>
+            <p>Tối ưu website cho công cụ tìm kiếm.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- ==========================================================
+         SECTION 3 – KỸ NĂNG CHUYÊN MÔN
+         Dùng thẻ <dl> (description list) để mô tả từng kỹ năng
+         kèm mức độ thành thạo – ngữ nghĩa phù hợp hơn <ul> thuần túy.
+    ========================================================== -->
+    <section id="skills" aria-labelledby="skills-heading">
+
+      <h2 id="skills-heading">Kỹ năng chuyên môn</h2>
+
+      <!-- Nhóm kỹ năng Front-end -->
+      <section aria-labelledby="skills-frontend">
+        <h3 id="skills-frontend">Ngôn ngữ &amp; Công nghệ Front-end</h3>
+        <dl>
+          <dt>HTML5</dt><dd>Thành thạo – Semantic HTML, Accessibility (WCAG 2.1)</dd>
+          <dt>CSS3 / SCSS</dt><dd>Thành thạo – Flexbox, Grid, Responsive Design</dd>
+          <dt>JavaScript (ES6+)</dt><dd>Thành thạo – DOM, Async/Await, Fetch API</dd>
+          <dt>React.js</dt><dd>Khá – Hooks, Context API, React Router</dd>
+          <dt>Next.js</dt><dd>Trung bình – SSR, SSG, App Router</dd>
+        </dl>
+      </section>
+
+      <!-- Nhóm kỹ năng công cụ -->
+      <section aria-labelledby="skills-tools">
+        <h3 id="skills-tools">Công cụ &amp; Quy trình làm việc</h3>
+        <dl>
+          <dt>Git &amp; GitHub</dt><dd>Thành thạo – Branching, Pull Request, Code Review</dd>
+          <dt>Figma</dt><dd>Khá – UI Design, Prototyping, Design Handoff</dd>
+          <dt>Node.js / npm</dt><dd>Trung bình – Quản lý dự án và phụ thuộc</dd>
+          <dt>REST API</dt><dd>Thành thạo – Tích hợp, xử lý dữ liệu JSON</dd>
+        </dl>
+      </section>
+
+      <!-- Kỹ năng mềm -->
+      <section aria-labelledby="skills-soft">
+        <h3 id="skills-soft">Kỹ năng mềm</h3>
+        <ul>
+          <li>Làm việc nhóm và giao tiếp hiệu quả</li>
+          <li>Tư duy giải quyết vấn đề (Problem-solving)</li>
+          <li>Quản lý thời gian và ưu tiên công việc</li>
+          <li>Học hỏi liên tục và thích nghi nhanh</li>
+        </ul>
+      </section>
+
+    </section>
+    <!-- /SECTION 3 – KỸ NĂNG -->
+
+
+    <!-- ==========================================================
+         SECTION 4 – LIÊN HỆ
+         Mỗi <input> liên kết với <label> qua thuộc tính for/id
+         để đảm bảo khả năng tiếp cận (accessibility) cho screen reader.
+    ========================================================== -->
+    <section id="contact" aria-labelledby="contact-heading">
+
+      <h2 id="contact-heading">Liên hệ</h2>
+      <p>Bạn có dự án thú vị hoặc muốn hợp tác? Hãy gửi tin nhắn cho tôi!</p>
+
+      <form action="https://formsubmit.co/nguyenvana@email.com" method="POST"
+            novalidate aria-label="Biểu mẫu liên hệ">
+
+        <!-- Trường họ tên -->
+        <div>
+          <label for="contact-name">Họ và tên <abbr title="Bắt buộc">*</abbr></label>
+          <input type="text" id="contact-name" name="name" required
+                 autocomplete="name" placeholder="Nguyễn Thị B" aria-required="true" />
+        </div>
+
+        <!-- Trường email -->
+        <div>
+          <label for="contact-email">Địa chỉ Email <abbr title="Bắt buộc">*</abbr></label>
+          <input type="email" id="contact-email" name="email" required
+                 autocomplete="email" placeholder="nguyenthib@email.com" aria-required="true" />
+        </div>
+
+        <!-- Trường chủ đề -->
+        <div>
+          <label for="contact-subject">Chủ đề</label>
+          <input type="text" id="contact-subject" name="subject"
+                 placeholder="Đề nghị hợp tác dự án" />
+        </div>
+
+        <!-- Trường nội dung tin nhắn -->
+        <div>
+          <label for="contact-message">Nội dung tin nhắn <abbr title="Bắt buộc">*</abbr></label>
+          <textarea id="contact-message" name="message" required
+                    rows="6" placeholder="Nội dung chi tiết..." aria-required="true"></textarea>
+        </div>
+
+        <!-- Nút gửi biểu mẫu -->
+        <button type="submit">Gửi tin nhắn</button>
+      </form>
+
+    </section>
+    <!-- /SECTION 4 – LIÊN HỆ -->
+
+
+  </main>
+  <!-- /MAIN -->
+
+
+  <!-- ============================================================
+       FOOTER – CHÂN TRANG
+       Chứa thông tin bản quyền, liên hệ nhanh và liên kết mạng xã hội.
+       <nav> thứ cấp với aria-label riêng để phân biệt với nav trong header.
+  ============================================================ -->
+  <footer>
+
+    <!-- Thẻ <address> chứa thông tin liên lạc của tác giả/chủ sở hữu trang -->
+    <address>
+      <p>
+        <strong>Nguyễn Văn A</strong><br />
+        Hà Nội, Việt Nam<br />
+        <a href="mailto:nguyenvana@email.com">nguyenvana@email.com</a><br />
+        <a href="tel:+84901234567">+84 90 123 4567</a>
+      </p>
+    </address>
+
+    <!-- --------------------------------------------------------
+         NAV – LIÊN KẾT MẠNG XÃ HỘI
+         rel="noopener noreferrer" bảo vệ bảo mật khi mở tab mới.
+         aria-label mô tả đích đến giúp screen reader đọc rõ ràng.
+    -------------------------------------------------------- -->
+    <nav aria-label="Mạng xã hội">
+      <ul>
+        <li>
+          <a href="https://github.com/nguyenvana" target="_blank" rel="noopener noreferrer"
+             aria-label="Trang GitHub của Nguyễn Văn A (mở trong tab mới)">GitHub</a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/nguyenvana" target="_blank" rel="noopener noreferrer"
+             aria-label="Trang LinkedIn của Nguyễn Văn A (mở trong tab mới)">LinkedIn</a>
+        </li>
+        <li>
+          <a href="https://twitter.com/nguyenvana" target="_blank" rel="noopener noreferrer"
+             aria-label="Trang Twitter của Nguyễn Văn A (mở trong tab mới)">Twitter / X</a>
+        </li>
+        <li>
+          <a href="https://facebook.com/nguyenvana" target="_blank" rel="noopener noreferrer"
+             aria-label="Trang Facebook của Nguyễn Văn A (mở trong tab mới)">Facebook</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Thông tin bản quyền -->
+    <p>
+      <small>
+        &copy; <time datetime="2026">2026</time> Nguyễn Văn A. Bảo lưu mọi quyền.
+      </small>
+    </p>
+
+  </footer>
+  <!-- /FOOTER -->
+
+
+</body>
+</html>

@@ -1,0 +1,827 @@
+:root {
+    /* =========================
+       CSS VARIABLES
+    ========================= */
+
+    /* 2 màu chủ đạo */
+    --primary-color: #074adc;
+    --secondary-color: #da230b;
+
+    /* 3 mức màu xám cho text */
+    --text-dark: #1f2937;
+    --text-medium: #4b5563;
+    --text-light: #6b7280;
+
+    /* Màu nền */
+    --background-color: #f3f6fb;
+
+    /* Màu phụ */
+    --white-color: #ffffff;
+    --border-color: #e5e7eb;
+    --light-gray-color: #f1f5f9;
+
+    /* Hiệu ứng */
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.12);
+    --radius: 12px;
+}
+
+
+/* =========================
+   1. ĐỊNH DẠNG CHUNG
+   MOBILE FIRST: 1 CỘT
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+main,
+section,
+article,
+div {
+    max-width: 100%;
+    min-width: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+
+    color: var(--text-dark);
+    background-color: var(--background-color);
+
+    margin: 0;
+}
+
+
+/* =========================
+   2. HEADER & NAVIGATION
+========================= */
+
+body > header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+
+    color: var(--white-color);
+    text-align: center;
+
+    padding: 30px 20px;
+
+    box-shadow: var(--shadow);
+}
+
+body > header h1 {
+    font-size: 32px;
+    margin: 0;
+}
+
+body > header > p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+
+/* Navigation */
+
+header nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+}
+
+header nav a {
+    display: inline-block;
+
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: bold;
+
+    padding: 6px 12px;
+    border-radius: 6px;
+
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+}
+
+
+/* =========================
+   3. MAIN
+   MOBILE: 1 CỘT
+========================= */
+
+main#home {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 30px auto;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =========================
+   4. CÁC PHẦN NỘI DUNG
+========================= */
+
+#about,
+#projects,
+#skills,
+#contact {
+    background-color: var(--white-color);
+
+    padding: 25px;
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    transition: 0.3s;
+}
+
+#about:hover,
+#projects:hover,
+#skills:hover,
+#contact:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+
+/* =========================
+   4.1 PHẦN SERVICES
+========================= */
+
+#services {
+    background-color: var(--white-color);
+
+    padding: 25px;
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    transition: 0.3s;
+}
+
+#services:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.services-container {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 20px;
+}
+
+.service {
+    padding: 20px;
+
+    background-color: var(--light-gray-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+
+    min-width: 0;
+}
+
+.service h3 {
+    margin-top: 0;
+
+    color: var(--text-dark);
+}
+
+
+/* =========================
+   5. TIÊU ĐỀ
+========================= */
+
+h2 {
+    color: var(--text-dark);
+
+    margin-top: 0;
+    margin-bottom: 15px;
+
+    font-size: 24px;
+}
+
+h3 {
+    color: var(--text-medium);
+}
+
+
+/* =========================
+   6. PHẦN GIỚI THIỆU
+========================= */
+
+#about figure {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#about figure img {
+    width: 200px;
+    height: 200px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid var(--primary-color);
+
+    box-shadow: var(--shadow);
+}
+
+#about figcaption {
+    margin-top: 10px;
+
+    font-weight: bold;
+    color: var(--text-medium);
+}
+
+#about dl {
+    display: grid;
+
+    grid-template-columns: minmax(100px, 120px) minmax(0, 1fr);
+
+    gap: 10px;
+}
+
+#about dt {
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+#about dd {
+    margin: 0;
+    color: var(--text-medium);
+}
+
+#about a {
+    color: var(--primary-color);
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+#about a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   7. PHẦN DỰ ÁN
+   MOBILE: 1 CỘT
+========================= */
+
+#projects {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 20px;
+}
+
+#projects > h2,
+#projects > p {
+    grid-column: 1;
+}
+
+#projects article {
+    border: 1px solid var(--border-color);
+
+    border-radius: 10px;
+
+    padding: 18px;
+
+    background-color: #fafbff;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    transition: 0.3s;
+
+    min-width: 0;
+}
+
+#projects article:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+#projects article header {
+    background-color: transparent;
+
+    color: var(--text-dark);
+
+    text-align: left;
+
+    padding: 0;
+
+    box-shadow: none;
+}
+
+#projects article header h3 {
+    margin: 0;
+
+    color: var(--text-dark);
+}
+
+#projects article header p {
+    margin: 5px 0;
+
+    color: var(--text-light);
+}
+
+#projects article > img {
+    width: 100%;
+    max-width: 100%;
+    height: 200px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+#projects article ul {
+    padding-left: 20px;
+
+    color: var(--text-medium);
+}
+
+#projects article footer {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: auto;
+}
+
+#projects article footer a {
+    background-color: var(--secondary-color);
+
+    color: var(--white-color);
+
+    padding: 8px 14px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+#projects article footer a:hover {
+    background-color: var(--primary-color);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   8. PHẦN KỸ NĂNG
+========================= */
+
+#skills section {
+    margin-bottom: 25px;
+}
+
+#skills dl {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    min-width: 0;
+}
+
+#skills dt {
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+
+    color: var(--white-color);
+
+    padding: 8px 14px;
+
+    font-weight: bold;
+
+    border-radius: 6px;
+}
+
+#skills dd {
+    margin: 0;
+
+    padding: 8px 12px;
+
+    background-color: var(--light-gray-color);
+
+    border-radius: 6px;
+
+    flex: 1 1 200px;
+
+    color: var(--text-medium);
+
+    min-width: 0;
+}
+
+#skills ul {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    list-style: none;
+
+    padding: 0;
+
+    min-width: 0;
+}
+
+#skills ul li {
+    background-color: var(--light-gray-color);
+
+    color: var(--text-medium);
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    border: 1px solid var(--border-color);
+
+    transition: 0.3s;
+}
+
+#skills ul li:hover {
+    background-color: var(--primary-color);
+
+    color: var(--white-color);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   9. FORM LIÊN HỆ
+========================= */
+
+#contact form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    min-width: 0;
+}
+
+#contact form > div {
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+#contact label {
+    font-weight: bold;
+
+    margin-bottom: 5px;
+
+    color: var(--text-medium);
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    min-width: 0;
+
+    padding: 11px 12px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 7px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: var(--primary-color);
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+#contact textarea {
+    resize: vertical;
+}
+
+#contact button {
+    padding: 11px;
+
+    border-radius: 7px;
+
+    border: none;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+
+    color: var(--white-color);
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#contact button:hover {
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow);
+}
+
+
+/* =========================
+   10. FOOTER
+========================= */
+
+body > footer {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 20px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+
+    color: var(--white-color);
+
+    padding: 25px 20px;
+
+    margin-top: 30px;
+}
+
+body > footer address {
+    font-style: normal;
+}
+
+body > footer p {
+    margin: 0;
+}
+
+footer nav ul {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+footer nav a {
+    color: var(--white-color);
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+footer nav a:hover {
+    text-decoration: underline;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   MEDIA QUERIES
+   TABLET: TỪ 768PX TRỞ LÊN
+========================================================= */
+
+@media (min-width: 768px) {
+
+    /* Menu chuyển về hàng ngang */
+
+    body > header nav ul,
+    footer nav ul {
+        flex-direction: row;
+
+        gap: 20px;
+    }
+
+
+    /* Main chuyển thành 2 cột */
+
+    main#home {
+        width: 100%;
+
+        grid-template-columns:
+            minmax(0, 2fr)
+            minmax(0, 1fr);
+    }
+
+
+    /* About, Projects và Services chiếm toàn bộ 2 cột */
+
+    #about,
+    #projects,
+    #services {
+        grid-column: 1 / -1;
+    }
+
+
+    /* Services chuyển thành 2 cột */
+
+    .services-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+
+
+    /* Skills nằm bên trái */
+
+    #skills {
+        grid-column: 1;
+    }
+
+
+    /* Contact nằm bên phải */
+
+    #contact {
+        grid-column: 2;
+    }
+
+
+    /* Projects chuyển thành 2 cột */
+
+    #projects {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #projects > h2,
+    #projects > p {
+        grid-column: 1 / -1;
+    }
+
+
+    /* Footer dàn ngang */
+
+    body > footer {
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        text-align: left;
+    }
+}
+
+
+/* =========================
+   MEDIA QUERIES
+   DESKTOP: TỪ 1025PX TRỞ LÊN
+========================= */
+
+@media (min-width: 1025px) {
+
+    body > header {
+        padding: 40px 30px;
+    }
+
+    body > header h1 {
+        font-size: 36px;
+    }
+
+    main#home {
+        gap: 30px;
+    }
+
+    #about,
+    #projects,
+    #skills,
+    #contact,
+    #services {
+        padding: 30px;
+    }
+
+    #projects {
+        gap: 25px;
+    }
+
+
+    /* Services chuyển thành 4 cột */
+
+    .services-container {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+
+    body > footer {
+        padding: 30px;
+    }
+}
+
+
+/* =========================================================
+   MÀN HÌNH NHỎ
+========================================================= */
+
+@media (max-width: 480px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    body > header h1 {
+        font-size: 25px;
+    }
+
+    main#home {
+        width: 94%;
+    }
+
+    #about,
+    #projects,
+    #skills,
+    #contact,
+    #services {
+        padding: 18px;
+    }
+
+    #about dl {
+        grid-template-columns: 1fr;
+    }
+
+    #about dt {
+        margin-top: 5px;
+    }
+
+    #about figure img {
+        width: 160px;
+        height: 160px;
+    }
+}
