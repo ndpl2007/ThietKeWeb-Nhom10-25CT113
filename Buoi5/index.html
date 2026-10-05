@@ -1,0 +1,431 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <!-- ============================================================
+       META & TIÊU ĐỀ TRANG
+       Khai báo bộ ký tự, viewport cho thiết bị di động và tiêu đề
+       hiển thị trên tab trình duyệt / kết quả tìm kiếm.
+  ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio cá nhân – Giới thiệu về tôi, các dự án tiêu biểu và kỹ năng chuyên môn." />
+  <meta name="author" content="Nguyễn Duy Phúc Lộc" />
+  <title>Portfolio Cá Nhân | Nguyễn Duy Phúc Lộc</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="page-loader" role="status" aria-label="Đang tải trang">
+    <div class="loader-logo">NDPL</div>
+    <span class="loader-ring"></span>
+    <p>Đang tải portfolio...</p>
+  </div>
+
+  <!-- ============================================================
+       HEADER – ĐẦU TRANG
+       Thẻ <header> đóng vai trò vùng tiêu đề toàn trang (site-wide).
+       Chứa tên/logo thương hiệu cá nhân và thanh điều hướng chính.
+  ============================================================ -->
+  <header>
+
+    <!-- Tên thương hiệu / logo cá nhân -->
+    <div class="brand">
+      <div class="brand-mark" aria-label="Logo NDPL">NDPL</div>
+      <h1 class="profile-name">Nguyễn Duy Phúc Lộc</h1>
+      <p class="profile-job">Front-end Developer &amp; UI Designer</p>
+    </div>
+
+    <!-- --------------------------------------------------------
+         NAV – THANH ĐIỀU HƯỚNG CHÍNH
+         Thẻ <nav> xác định vùng điều hướng chính của trang.
+         Thuộc tính aria-label giúp công nghệ hỗ trợ (screen reader)
+         phân biệt nav này với các nav phụ khác trên trang.
+    -------------------------------------------------------- -->
+    <nav aria-label="Điều hướng chính">
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="hamburger" aria-label="Mở hoặc đóng menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <ul>
+        <li><a href="#home"     aria-current="page">Trang chủ</a></li>
+        <li><a href="#about"                       >Giới thiệu</a></li>
+        <li><a href="#projects"                    >Dự án</a></li>
+        <li><a href="#skills"                      >Kỹ năng</a></li>
+        <li><a href="#contact"                     >Liên hệ</a></li>
+      </ul>
+    </nav>
+
+  </header>
+  <!-- /HEADER -->
+
+
+  <!-- ============================================================
+       MAIN – NỘI DUNG CHÍNH
+       Thẻ <main> xác định vùng nội dung chính, duy nhất trên trang.
+       Giúp công nghệ hỗ trợ bỏ qua header/footer và đến thẳng
+       nội dung cốt lõi. Thuộc tính id="home" làm neo (anchor)
+       cho liên kết "Trang chủ" trong nav.
+  ============================================================ -->
+  <main id="home">
+
+    <section class="parallax-banner" aria-label="Lời chào">
+      <p class="eyebrow">Chào mừng đến với portfolio của tôi</p>
+      <h2>Tôi là một Web Developer<span class="typing-cursor">...</span></h2>
+      <p>Biến ý tưởng thành những trải nghiệm web nhanh, đẹp và dễ sử dụng.</p>
+    </section>
+
+    <!-- ==========================================================
+         SECTION 1 – GIỚI THIỆU TỔNG QUAN (HERO / ABOUT)
+         Giới thiệu ngắn gọn về bản thân, vai trò và định hướng
+         nghề nghiệp. Đây thường là phần đầu tiên người dùng thấy.
+    ========================================================== -->
+    <section id="about" aria-labelledby="about-heading">
+
+      <h2 id="about-heading">Giới thiệu</h2>
+
+      <!-- Ảnh đại diện kèm văn bản thay thế mô tả nội dung ảnh -->
+      <figure>
+        <img
+          src="assets/images/avatar.jpg"
+          alt="Ảnh chân dung của Nguyễn Duy Phúc Lộc"
+          width="200"
+          height="200"
+        />
+        <figcaption>
+          <strong class="profile-name">Nguyễn Duy Phúc Lộc</strong>
+          <span class="profile-job">Front-end Developer &amp; UI Designer</span>
+        </figcaption>
+      </figure>
+
+      <article class="about-content">
+        <p class="about-intro">
+          Tôi là Front-end Developer &amp; UI Designer, yêu thích việc tạo ra những giao diện
+          hiện đại, dễ dùng và có trải nghiệm mượt mà.
+        </p>
+        <div class="about-highlights" aria-label="Thông tin nổi bật">
+          <span>3+ năm kinh nghiệm</span>
+          <span>Front-end &amp; UI</span>
+          <span>Đồng Nai, Việt Nam</span>
+        </div>
+        <a class="about-email" href="mailto:phucloc457@gmail.com">phucloc457@gmail.com</a>
+        <a class="about-cv" href="assets/files/CV_NguyenVanA.pdf" download>Tải CV của tôi</a>
+      </article>
+
+    </section>
+    <!-- /SECTION 1 – GIỚI THIỆU -->
+
+
+    <!-- ==========================================================
+         SECTION 2 – DỰ ÁN TIÊU BIỂU
+         Trình bày các dự án nổi bật đã thực hiện. Mỗi dự án được
+         bọc trong thẻ <article> vì đây là đơn vị nội dung độc lập,
+         có thể tái sử dụng hoặc phân phối riêng lẻ.
+    ========================================================== -->
+    <section id="projects" aria-labelledby="projects-heading">
+
+      <h2 id="projects-heading">Dự án tiêu biểu</h2>
+      <p>Một số dự án tôi đã xây dựng và đóng góp:</p>
+
+      <!-- ---- Dự án 1 ----------------------------------------- -->
+      <article aria-labelledby="project1-title">
+        <header>
+          <!-- Header trong article chứa tiêu đề và metadata của dự án -->
+          <h3 id="project1-title">Website Thương mại điện tử – ShopNow</h3>
+          <p>
+            <time datetime="2024-06">Tháng 6, 2024</time> –
+            <span>Dự án cá nhân</span>
+          </p>
+        </header>
+        <img src="assets/images/project-shopnow.svg"
+             alt="Ảnh chụp màn hình giao diện trang chủ của dự án ShopNow"
+             width="600" height="350" />
+        <p>Nền tảng mua sắm trực tuyến hỗ trợ đầy đủ luồng từ duyệt sản phẩm,
+           thêm vào giỏ hàng đến thanh toán.</p>
+        <ul>
+          <li>HTML5 &amp; CSS3</li>
+          <li>JavaScript (Vanilla)</li>
+          <li>REST API</li>
+        </ul>
+        <footer>
+          <!-- Footer trong article chứa các liên kết hành động -->
+          <a class="project-demo" href="https://shopnow-demo.example.com" target="_blank" rel="noopener noreferrer">Xem Demo</a>
+          <a class="project-github" href="https://github.com/nguyenvana/shopnow" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </footer>
+      </article>
+
+      <!-- ---- Dự án 2 ----------------------------------------- -->
+      <article aria-labelledby="project2-title">
+        <header>
+          <h3 id="project2-title">Ứng dụng Quản lý Công việc – TaskFlow</h3>
+          <p><time datetime="2023-11">Tháng 11, 2023</time> – <span>Dự án nhóm</span></p>
+        </header>
+        <img src="assets/images/project-taskflow.svg"
+             alt="Ảnh chụp màn hình bảng Kanban của ứng dụng TaskFlow"
+             width="600" height="350" />
+        <p>Ứng dụng quản lý công việc theo phương pháp Kanban, hỗ trợ làm việc nhóm thời gian thực.</p>
+        <ul>
+          <li>React.js</li>
+          <li>Node.js &amp; Express</li>
+          <li>WebSocket</li>
+          <li>MongoDB</li>
+        </ul>
+        <footer>
+          <a class="project-demo" href="https://taskflow-demo.example.com" target="_blank" rel="noopener noreferrer">Xem Demo</a>
+          <a class="project-github" href="https://github.com/nguyenvana/taskflow" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </footer>
+      </article>
+
+      <!-- ---- Dự án 3 ----------------------------------------- -->
+      <article aria-labelledby="project3-title">
+        <header>
+          <h3 id="project3-title">Blog Cá nhân – DevNotes</h3>
+          <p><time datetime="2023-05">Tháng 5, 2023</time> – <span>Dự án cá nhân</span></p>
+        </header>
+        <img src="assets/images/project-devnotes.svg"
+             alt="Ảnh chụp màn hình trang danh sách bài viết của DevNotes"
+             width="600" height="350" />
+        <p>Blog kỹ thuật đạt điểm Lighthouse <strong>100/100</strong> về hiệu suất và khả năng tiếp cận.</p>
+        <ul>
+          <li>Next.js (Static Export)</li>
+          <li>Markdown / MDX</li>
+          <li>Vercel Hosting</li>
+        </ul>
+        <footer>
+          <a class="project-demo" href="https://devnotes.example.com" target="_blank" rel="noopener noreferrer">Xem Blog</a>
+          <a class="project-github" href="https://github.com/nguyenvana/devnotes" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </footer>
+      </article>
+
+    </section>
+    <!-- /SECTION 2 – DỰ ÁN -->
+
+    <!-- =========================
+     SECTION 3 – DỊCH VỤ
+========================= -->
+
+<section id="services">
+
+    <h2>Dịch vụ</h2>
+
+    <div class="services-container">
+
+        <div class="service">
+            <h3>Web Development</h3>
+            <p>Xây dựng website hiện đại và responsive.</p>
+        </div>
+
+        <div class="service">
+            <h3>UI/UX Design</h3>
+            <p>Thiết kế giao diện trực quan và dễ sử dụng.</p>
+        </div>
+
+        <div class="service">
+            <h3>Mobile Development</h3>
+            <p>Phát triển ứng dụng dành cho thiết bị di động.</p>
+        </div>
+
+        <div class="service">
+            <h3>SEO Optimization</h3>
+            <p>Tối ưu website cho công cụ tìm kiếm.</p>
+        </div>
+
+    </div>
+
+</section>
+
+    <section id="team-card" aria-labelledby="team-heading">
+      <h2 id="team-heading">Thẻ nhân sự</h2>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <article class="flip-card-front">
+            <div class="team-avatar" aria-hidden="true">NA</div>
+            <h3 class="profile-name">Nguyễn Duy Phúc Lộc</h3>
+            <p class="profile-job">Front-end Developer</p>
+            <span class="flip-hint">Di chuột để xem liên hệ</span>
+          </article>
+          <article class="flip-card-back">
+            <h3>Liên hệ với tôi</h3>
+            <p>Sẵn sàng đồng hành cùng bạn trong dự án tiếp theo.</p>
+            <a href="mailto:phucloc457@gmail.com">phucloc457@gmail.com</a>
+            <a class="footer-phone" href="tel:+84901234567">+84 90 123 4567</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         SECTION 3 – KỸ NĂNG CHUYÊN MÔN
+         Dùng thẻ <dl> (description list) để mô tả từng kỹ năng
+         kèm mức độ thành thạo – ngữ nghĩa phù hợp hơn <ul> thuần túy.
+    ========================================================== -->
+    <section id="skills" aria-labelledby="skills-heading">
+
+      <h2 id="skills-heading">Kỹ năng chuyên môn</h2>
+      <div class="skill-bars" aria-label="Mức độ thành thạo">
+        <div class="skill-bar">
+          <div class="skill-bar-label"><span>HTML</span><strong>90%</strong></div>
+          <div class="skill-bar-track"><span style="--skill-level: 90%"></span></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-bar-label"><span>CSS</span><strong>85%</strong></div>
+          <div class="skill-bar-track"><span style="--skill-level: 85%"></span></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-bar-label"><span>JavaScript</span><strong>80%</strong></div>
+          <div class="skill-bar-track"><span style="--skill-level: 80%"></span></div>
+        </div>
+      </div>
+
+      <!-- Nhóm kỹ năng Front-end -->
+      <section aria-labelledby="skills-frontend">
+        <h3 id="skills-frontend">Ngôn ngữ &amp; Công nghệ Front-end</h3>
+        <dl>
+          <dt>HTML5</dt><dd>Thành thạo – Semantic HTML, Accessibility (WCAG 2.1)</dd>
+          <dt>CSS3 / SCSS</dt><dd>Thành thạo – Flexbox, Grid, Responsive Design</dd>
+          <dt>JavaScript (ES6+)</dt><dd>Thành thạo – DOM, Async/Await, Fetch API</dd>
+          <dt>React.js</dt><dd>Khá – Hooks, Context API, React Router</dd>
+          <dt>Next.js</dt><dd>Trung bình – SSR, SSG, App Router</dd>
+        </dl>
+      </section>
+
+      <!-- Nhóm kỹ năng công cụ -->
+      <section aria-labelledby="skills-tools">
+        <h3 id="skills-tools">Công cụ &amp; Quy trình làm việc</h3>
+        <dl>
+          <dt>Git &amp; GitHub</dt><dd>Thành thạo – Branching, Pull Request, Code Review</dd>
+          <dt>Figma</dt><dd>Khá – UI Design, Prototyping, Design Handoff</dd>
+          <dt>Node.js / npm</dt><dd>Trung bình – Quản lý dự án và phụ thuộc</dd>
+          <dt>REST API</dt><dd>Thành thạo – Tích hợp, xử lý dữ liệu JSON</dd>
+        </dl>
+      </section>
+
+      <!-- Kỹ năng mềm -->
+      <section aria-labelledby="skills-soft">
+        <h3 id="skills-soft">Kỹ năng mềm</h3>
+        <ul>
+          <li>Làm việc nhóm và giao tiếp hiệu quả</li>
+          <li>Tư duy giải quyết vấn đề (Problem-solving)</li>
+          <li>Quản lý thời gian và ưu tiên công việc</li>
+          <li>Học hỏi liên tục và thích nghi nhanh</li>
+        </ul>
+      </section>
+
+    </section>
+    <!-- /SECTION 3 – KỸ NĂNG -->
+
+
+    <!-- ==========================================================
+         SECTION 4 – LIÊN HỆ
+         Mỗi <input> liên kết với <label> qua thuộc tính for/id
+         để đảm bảo khả năng tiếp cận (accessibility) cho screen reader.
+    ========================================================== -->
+    <section id="contact" aria-labelledby="contact-heading">
+
+      <h2 id="contact-heading">Liên hệ</h2>
+      <p>Bạn có dự án thú vị hoặc muốn hợp tác? Hãy gửi tin nhắn cho tôi!</p>
+
+      <form action="https://formsubmit.co/phucloc457@gmail.com" method="POST"
+            novalidate aria-label="Biểu mẫu liên hệ">
+
+        <!-- Trường họ tên -->
+        <div>
+          <label for="contact-name">Họ và tên <abbr title="Bắt buộc">*</abbr></label>
+          <input type="text" id="contact-name" name="name" required
+                 autocomplete="name" placeholder="Nguyễn Thị B" aria-required="true" />
+        </div>
+
+        <!-- Trường email -->
+        <div>
+          <label for="contact-email">Địa chỉ Email <abbr title="Bắt buộc">*</abbr></label>
+          <input type="email" id="contact-email" name="email" required
+                 autocomplete="email" placeholder="nguyenthib@email.com" aria-required="true" />
+        </div>
+
+        <!-- Trường chủ đề -->
+        <div>
+          <label for="contact-subject">Chủ đề</label>
+          <input type="text" id="contact-subject" name="subject"
+                 placeholder="Đề nghị hợp tác dự án" />
+        </div>
+
+        <!-- Trường nội dung tin nhắn -->
+        <div>
+          <label for="contact-message">Nội dung tin nhắn <abbr title="Bắt buộc">*</abbr></label>
+          <textarea id="contact-message" name="message" required
+                    rows="6" placeholder="Nội dung chi tiết..." aria-required="true"></textarea>
+        </div>
+
+        <!-- Nút gửi biểu mẫu -->
+        <button type="submit">Gửi tin nhắn</button>
+      </form>
+
+    </section>
+    <!-- /SECTION 4 – LIÊN HỆ -->
+
+
+  </main>
+  <!-- /MAIN -->
+
+
+  <!-- ============================================================
+       FOOTER – CHÂN TRANG
+       Chứa thông tin bản quyền, liên hệ nhanh và liên kết mạng xã hội.
+       <nav> thứ cấp với aria-label riêng để phân biệt với nav trong header.
+  ============================================================ -->
+  <footer>
+
+    <!-- Thẻ <address> chứa thông tin liên lạc của tác giả/chủ sở hữu trang -->
+    <address>
+      <p>
+        <strong>Nguyễn Duy Phúc Lộc</strong><br />
+        Đồng Nai, Việt Nam<br />
+        <a href="mailto:phucloc457@gmail.com">phucloc457@gmail.com</a><br />
+        <a href="tel:+84901234567">+84 90 123 4567</a>
+      </p>
+    </address>
+
+    <!-- --------------------------------------------------------
+         NAV – LIÊN KẾT MẠNG XÃ HỘI
+         rel="noopener noreferrer" bảo vệ bảo mật khi mở tab mới.
+         aria-label mô tả đích đến giúp screen reader đọc rõ ràng.
+    -------------------------------------------------------- -->
+    <nav aria-label="Mạng xã hội">
+      <ul>
+        <li>
+          <a href="https://github.com/nguyenvana" target="_blank" rel="noopener noreferrer"
+             aria-label="Trang GitHub của Nguyễn Duy Phúc Lộc (mở trong tab mới)">GitHub</a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/nguyenvana" target="_blank" rel="noopener noreferrer"
+             aria-label="Trang LinkedIn của Nguyễn Duy Phúc Lộc (mở trong tab mới)">LinkedIn</a>
+        </li>
+        <li>
+          <a href="https://twitter.com/nguyenvana" target="_blank" rel="noopener noreferrer"
+             aria-label="Trang Twitter của Nguyễn Duy Phúc Lộc (mở trong tab mới)">Twitter / X</a>
+        </li>
+        <li>
+          <a href="https://facebook.com/nguyenvana" target="_blank" rel="noopener noreferrer"
+             aria-label="Trang Facebook của Nguyễn Duy Phúc Lộc (mở trong tab mới)">Facebook</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Thông tin bản quyền -->
+    <p>
+      <small>
+        &copy; <time datetime="2026">2026</time> Nguyễn Duy Phúc Lộc. Bảo lưu mọi quyền.
+      </small>
+    </p>
+
+  </footer>
+  <!-- /FOOTER -->
+
+  <a class="floating-contact" href="#contact" aria-label="Đi đến phần liên hệ">Liên hệ</a>
+
+</body>
+</html>
