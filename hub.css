@@ -1,0 +1,234 @@
+:root {
+  --hub-bg: #eef4f7;
+  --hub-surface: #ffffff;
+  --hub-text: #1f2937;
+  --hub-muted: #64748b;
+  --hub-primary: #4f46e5;
+  --hub-secondary: #0f766e;
+  --hub-border: #dbe4ec;
+  --hub-shadow: 0 14px 35px rgba(30, 41, 59, 0.1);
+  --hub-shadow-hover: 0 20px 45px rgba(30, 41, 59, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  color: var(--hub-text);
+  background: var(--hub-bg);
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.hub-header {
+  padding: 72px 20px 84px;
+  color: #ffffff;
+  text-align: center;
+  background: linear-gradient(135deg, var(--hub-primary), var(--hub-secondary));
+}
+
+.hub-header h1,
+.hub-header p {
+  margin: 0;
+}
+
+.hub-header h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+}
+
+.hub-header > p:last-child {
+  margin-top: 14px;
+  opacity: 0.9;
+}
+
+.eyebrow {
+  margin-bottom: 12px !important;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hub-main {
+  width: min(1200px, calc(100% - 40px));
+  margin: -38px auto 56px;
+}
+
+.hub-intro {
+  margin-bottom: 24px;
+  padding: 24px 28px;
+  border: 1px solid var(--hub-border);
+  border-radius: 16px;
+  background: var(--hub-surface);
+  box-shadow: var(--hub-shadow);
+}
+
+.hub-intro h2,
+.hub-intro p {
+  margin: 0;
+}
+
+.hub-intro h2 {
+  font-size: 1.6rem;
+}
+
+.hub-intro p {
+  color: var(--hub-muted);
+}
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.practice-card {
+  overflow: hidden;
+  border: 1px solid var(--hub-border);
+  border-radius: 16px;
+  background: var(--hub-surface);
+  box-shadow: var(--hub-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.practice-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--hub-shadow-hover);
+}
+
+.practice-card-media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #cbd5e1;
+}
+
+.practice-card-media::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(180deg, transparent 35%, rgba(15, 23, 42, 0.62));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.practice-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.practice-card-button {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 20px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: var(--hub-primary);
+  font-weight: 700;
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 12px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.practice-card:hover .practice-card-media::after,
+.practice-card:focus-within .practice-card-media::after,
+.practice-card:hover .practice-card-button,
+.practice-card:focus-within .practice-card-button {
+  opacity: 1;
+  visibility: visible;
+}
+
+.practice-card:hover .practice-card-media img,
+.practice-card:focus-within .practice-card-media img {
+  transform: scale(1.06);
+}
+
+.practice-card:hover .practice-card-button,
+.practice-card:focus-within .practice-card-button {
+  transform: translate(-50%, 0);
+}
+
+.practice-card-content {
+  padding: 20px;
+}
+
+.practice-card-content h3,
+.practice-card-content p {
+  margin: 0;
+}
+
+.practice-card-content h3 {
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+}
+
+.practice-card-content > p:last-child {
+  color: var(--hub-muted);
+  font-size: 0.95rem;
+}
+
+.practice-card-week {
+  margin-bottom: 6px !important;
+  color: var(--hub-primary);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hub-footer {
+  padding: 28px 20px;
+  color: #ffffff;
+  text-align: center;
+  background: #1e293b;
+}
+
+.hub-footer p {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .practice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .hub-header {
+    padding: 52px 20px 68px;
+  }
+
+  .hub-main {
+    width: min(100% - 24px, 520px);
+    margin-top: -28px;
+  }
+
+  .practice-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
