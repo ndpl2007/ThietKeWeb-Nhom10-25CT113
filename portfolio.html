@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio cá nhân – Giới thiệu về tôi, các dự án tiêu biểu và kỹ năng chuyên môn." />
+  <meta name="author" content="Nguyễn Văn A" />
+  <title>Portfolio Cá Nhân | Nguyễn Văn A</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       CSS VARIABLES & RESET
+    ============================================================ */
+    :root {
+      --primary: #4f46e5;
+      --primary-dark: #3730a3;
+      --primary-light: #818cf8;
+      --accent: #06b6d4;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --bg: #f8fafc;
+      --bg-card: #ffffff;
+      --border: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--primary-dark);
+    }
+
+    /* ============================================================
+       HEADER & NAVIGATION
+    ============================================================ */
+    header {
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+      color: white;
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-lg);
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 0.25rem;
+    }
+
+    header > p {
+      text-align: center;
+      color: var(--primary-light);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    nav[aria-label="Điều hướng chính"] ul {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav[aria-label="Điều hướng chính"] a {
+      color: #e0e7ff;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    nav[aria-label="Điều hướng chính"] a:hover,
+    nav[aria-label="Điều hướng chính"] a[aria-current="page"] {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+    }
+
+    /* ============================================================
+       MAIN LAYOUT
+    ============================================================ */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ============================================================
+       ABOUT SECTION
+    ============================================================ */
+    #about {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3rem;
+      align-items: start;
+      background: var(--bg-card);
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    #about figure {
+      text-align: center;
+    }
+
+    #about img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--primary-light);
+      box-shadow: var(--shadow-lg);
+      margin: 0 auto 1rem;
+      background: linear-gradient(135deg, #c7d2fe, #a5b4fc);
+    }
+
+    #about figcaption {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    #about article h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+    }
+
+    #about p {
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    dl {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 0.5rem 1rem;
+      margin: 1.5rem 0;
+    }
+
+    dt {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    dd {
+      color: var(--text);
+    }
+
+    #about a[download] {
+      display: inline-block;
+      margin-top: 1rem;
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      box-shadow: var(--shadow);
+    }
+
+    #about a[download]:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ============================================================
+       PROJECTS SECTION
+    ============================================================ */
+    #projects > p {
+      color: var(--text-light);
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+
+    #projects article {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+      transition: var(--transition);
+      border: 1px solid var(--border);
+    }
+
+    #projects article:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    #projects article header {
+      background: transparent;
+      padding: 1.5rem 1.5rem 0.5rem;
+      box-shadow: none;
+    }
+
+    #projects article header h3 {
+      margin-bottom: 0.25rem;
+    }
+
+    #projects article header p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    #projects article img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+    }
+
+    #projects article > p {
+      padding: 1rem 1.5rem 0.5rem;
+    }
+
+    #projects article ul {
+      padding: 0 1.5rem 1rem;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    #projects article ul li {
+      background: #eef2ff;
+      color: var(--primary);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    #projects article footer {
+      padding: 0 1.5rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    #projects article footer a {
+      background: var(--primary);
+      color: white;
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    #projects article footer a:hover {
+      background: var(--primary-dark);
+    }
+
+    #projects article footer a:last-child {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+
+    #projects article footer a:last-child:hover {
+      background: #eef2ff;
+    }
+
+    /* ============================================================
+       SKILLS SECTION
+    ============================================================ */
+    #skills > section {
+      background: var(--bg-card);
+      padding: 1.75rem;
+      border-radius: var(--radius);
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    #skills h3 {
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    #skills dl {
+      grid-template-columns: 180px 1fr;
+    }
+
+    #skills dt {
+      font-weight: 600;
+    }
+
+    #skills dd {
+      color: var(--text-light);
+    }
+
+    #skills ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    #skills ul li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    #skills ul li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-size: 0.85rem;
+    }
+
+    /* ============================================================
+       CONTACT SECTION
+    ============================================================ */
+    #contact {
+      background: var(--bg-card);
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    #contact > p {
+      color: var(--text-light);
+      margin-bottom: 2rem;
+    }
+
+    form div {
+      margin-bottom: 1.25rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    label abbr {
+      color: #ef4444;
+      text-decoration: none;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: var(--transition);
+      background: #fafafa;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    }
+
+    button[type="submit"] {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      border: none;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+
+    button[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: #1e1b4b;
+      color: #c7d2fe;
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    footer address {
+      font-style: normal;
+      margin-bottom: 2rem;
+    }
+
+    footer address p {
+      line-height: 1.8;
+    }
+
+    footer address a {
+      color: var(--primary-light);
+    }
+
+    footer address a:hover {
+      color: white;
+    }
+
+    footer nav[aria-label="Mạng xã hội"] ul {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    footer nav a {
+      color: #a5b4fc;
+      font-weight: 500;
+      padding: 0.4rem 0.8rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+    }
+
+    footer nav a:hover {
+      color: white;
+      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    footer small {
+      color: #94a3b8;
+      font-size: 0.85rem;
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 768px) {
+      #about {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      #about figure {
+        margin-bottom: 1.5rem;
+      }
+
+      dl {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
+
+      dt {
+        margin-top: 0.75rem;
+      }
+
+      main {
+        padding: 2rem 1rem;
+      }
+
+      h2 {
+        font-size: 1.85rem;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      nav[aria-label="Điều hướng chính"] ul {
+        gap: 0.25rem;
+      }
+
+      nav[aria-label="Điều hướng chính"] a {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.85rem;
+      }
+
+      #projects article img {
+        height: 200px;
+      }
+
+      #contact {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #projects article footer {
+        flex-direction: column;
+      }
+
+      #projects article footer a {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Nguyễn Văn A</h1>
+    <p>Front-end Developer & UI Designer</p>
+
+    <nav aria-label="Điều hướng chính">
+      <ul>
+        <li><a href="#home" aria-current="page">Trang chủ</a></li>
+        <li><a href="#about">Giới thiệu</a></li>
+        <li><a href="#projects">Dự án</a></li>
+        <li><a href="#skills">Kỹ năng</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home">
+
+    <section id="about" aria-labelledby="about-heading">
+      <figure>
+        <img
+          src="assets/images/avatar.jpg"
+          alt="Ảnh chân dung của Nguyễn Văn A"
+          width="200"
+          height="200"
+        />
+        <figcaption>Nguyễn Văn A – Front-end Developer</figcaption>
+      </figure>
+
+      <article>
+        <h3>Xin chào, tôi là Nguyễn Văn A!</h3>
+        <p>
+          Tôi là một lập trình viên Front-end với hơn <strong>3 năm kinh nghiệm</strong>
+          trong việc xây dựng giao diện web hiện đại, thân thiện với người dùng
+          và tối ưu hóa hiệu suất.
+        </p>
+        <p>
+          Tốt nghiệp ngành <em>Công nghệ Thông tin</em> tại Đại học ABC, tôi có
+          niềm đam mê mạnh mẽ với thiết kế trải nghiệm người dùng (UX) và các
+          chuẩn web mở.
+        </p>
+
+        <dl>
+          <dt>Họ và tên</dt>
+          <dd>Nguyễn Văn A</dd>
+
+          <dt>Ngày sinh</dt>
+          <dd><time datetime="2000-01-15">15 tháng 01 năm 2000</time></dd>
+
+          <dt>Địa chỉ</dt>
+          <dd>Hà Nội, Việt Nam</dd>
+
+          <dt>Email</dt>
+          <dd><a href="mailto:nguyenvana@email.com">nguyenvana@email.com</a></dd>
+
+          <dt>Trạng thái</dt>
+          <dd>Đang tìm kiếm cơ hội mới</dd>
+        </dl>
+
+        <a href="assets/files/CV_NguyenVanA.pdf" download>Tải xuống CV (PDF)</a>
+      </article>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Dự án tiêu biểu</h2>
+      <p>Một số dự án tôi đã xây dựng và đóng góp:</p>
+
+      <article aria-labelledby="project1-title">
+        <header>
+          <h3 id="project1-title">Website Thương mại điện tử – ShopNow</h3>
+          <p>
+            <time datetime="2024-06">Tháng 6, 2024</time> –
+            <span>Dự án cá nhân</span>
+          </p>
+        </header>
+        <img src="assets/images/project-shopnow.jpg"
+             alt="Ảnh chụp màn hình giao diện trang chủ của dự án ShopNow"
+             width="600" height="350" />
+        <p>Nền tảng mua sắm trực tuyến hỗ trợ đầy đủ luồng từ duyệt sản phẩm,
+           thêm vào giỏ hàng đến thanh toán.</p>
+        <ul>
+          <li>HTML5 & CSS3</li>
+          <li>JavaScript (Vanilla)</li>
+          <li>REST API</li>
+        </ul>
+        <footer>
+          <a href="https://shopnow-demo.example.com" target="_blank" rel="noopener noreferrer">Xem Demo</a>
+          <a href="https://github.com/nguyenvana/shopnow" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </footer>
+      </article>
+
+      <article aria-labelledby="project2-title">
+        <header>
+          <h3 id="project2-title">Ứng dụng Quản lý Công việc – TaskFlow</h3>
+          <p><time datetime="2023-11">Tháng 11, 2023</time> – <span>Dự án nhóm</span></p>
+        </header>
+        <img src="assets/images/project-taskflow.jpg"
+             alt="Ảnh chụp màn hình bảng Kanban của ứng dụng TaskFlow"
+             width="600" height="350" />
+        <p>Ứng dụng quản lý công việc theo phương pháp Kanban, hỗ trợ làm việc nhóm thời gian thực.</p>
+        <ul>
+          <li>React.js</li>
+          <li>Node.js & Express</li>
+          <li>WebSocket</li>
+          <li>MongoDB</li>
+        </ul>
+        <footer>
+          <a href="https://taskflow-demo.example.com" target="_blank" rel="noopener noreferrer">Xem Demo</a>
+          <a href="https://github.com/nguyenvana/taskflow" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </footer>
+      </article>
+
+      <article aria-labelledby="project3-title">
+        <header>
+          <h3 id="project3-title">Blog Cá nhân – DevNotes</h3>
+          <p><time datetime="2023-05">Tháng 5, 2023</time> – <span>Dự án cá nhân</span></p>
+        </header>
+        <img src="assets/images/project-devnotes.jpg"
+             alt="Ảnh chụp màn hình trang danh sách bài viết của DevNotes"
+             width="600" height="350" />
+        <p>Blog kỹ thuật đạt điểm Lighthouse <strong>100/100</strong> về hiệu suất và khả năng tiếp cận.</p>
+        <ul>
+          <li>Next.js (Static Export)</li>
+          <li>Markdown / MDX</li>
+          <li>Vercel Hosting</li>
+        </ul>
+        <footer>
+          <a href="https://devnotes.example.com" target="_blank" rel="noopener noreferrer">Xem Blog</a>
+          <a href="https://github.com/nguyenvana/devnotes" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </footer>
+      </article>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Kỹ năng chuyên môn</h2>
+
+      <section aria-labelledby="skills-frontend">
+        <h3 id="skills-frontend">Ngôn ngữ & Công nghệ Front-end</h3>
+        <dl>
+          <dt>HTML5</dt><dd>Thành thạo – Semantic HTML, Accessibility (WCAG 2.1)</dd>
+          <dt>CSS3 / SCSS</dt><dd>Thành thạo – Flexbox, Grid, Responsive Design</dd>
+          <dt>JavaScript (ES6+)</dt><dd>Thành thạo – DOM, Async/Await, Fetch API</dd>
+          <dt>React.js</dt><dd>Khá – Hooks, Context API, React Router</dd>
+          <dt>Next.js</dt><dd>Trung bình – SSR, SSG, App Router</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="skills-tools">
+        <h3 id="skills-tools">Công cụ & Quy trình làm việc</h3>
+        <dl>
+          <dt>Git & GitHub</dt><dd>Thành thạo – Branching, Pull Request, Code Review</dd>
+          <dt>Figma</dt><dd>Khá – UI Design, Prototyping, Design Handoff</dd>
+          <dt>Node.js / npm</dt><dd>Trung bình – Quản lý dự án và phụ thuộc</dd>
+          <dt>REST API</dt><dd>Thành thạo – Tích hợp, xử lý dữ liệu JSON</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="skills-soft">
+        <h3 id="skills-soft">Kỹ năng mềm</h3>
+        <ul>
+          <li>Làm việc nhóm và giao tiếp hiệu quả</li>
+          <li>Tư duy giải quyết vấn đề (Problem-solving)</li>
+          <li>Quản lý thời gian và ưu tiên công việc</li>
+          <li>Học hỏi liên tục và thích nghi nhanh</li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Liên hệ</h2>
+      <p>Bạn có dự án thú vị hoặc muốn hợp tác? Hãy gửi tin nhắn cho tôi!</p>
+
+      <form action="https://formsubmit.co/nguyenvana@email.com" method="POST"
+            novalidate aria-label="Biểu mẫu liên hệ">
+
+        <div>
+          <label for="contact-name">Họ và tên <abbr title="Bắt buộc">*</abbr></label>
+          <input type="text" id="contact-name" name="name" required
+                 autocomplete="name" placeholder="Nguyễn Thị B" aria-required="true" />
+        </div>
+
+        <div>
+          <label for="contact-email">Địa chỉ Email <abbr title="Bắt buộc">*</abbr></label>
+          <input type="email" id="contact-email" name="email" required
+                 autocomplete="email" placeholder="nguyenthib@email.com" aria-required="true" />
+        </div>
+
+        <div>
+          <label for="contact-subject">Chủ đề</label>
+          <input type="text" id="contact-subject" name="subject"
+                 placeholder="Đề nghị hợp tác dự án" />
+        </div>
+
+        <div>
+          <label for="contact-message">Nội dung tin nhắn <abbr title="Bắt buộc">*</abbr></label>
+          <textarea id="contact-message" name="message" required
+                    rows="6" placeholder="Nội dung chi tiết..." aria-required="true"></textarea>
+        </div>
+
+        <button type="submit">Gửi tin nhắn</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <address>
+      <p>
+        <strong>Nguyễn Văn A</strong><br />
+        Hà Nội, Việt Nam<br />
+        <a href="mailto:nguyenvana@email.com">nguyenvana@email.com</a><br />
+        <a href="tel:+84901234567">+84 90 123 4567</a>
+      </p>
+    </address>
+
+    <nav aria-label="Mạng xã hội">
+      <ul>
+        <li>
+          <a href="https://github.com/nguyenvana" target="_blank" rel="noopener noreferrer"
+             aria-label="Trang GitHub của Nguyễn Văn A (mở trong tab mới)">GitHub</a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/nguyenvana" target="_blank" rel="noopener noreferrer"
+             aria-label="Trang LinkedIn của Nguyễn Văn A (mở trong tab mới)">LinkedIn</a>
+        </li>
+        <li>
+          <a href="https://twitter.com/nguyenvana" target="_blank" rel="noopener noreferrer"
+             aria-label="Trang Twitter của Nguyễn Văn A (mở trong tab mới)">Twitter / X</a>
+        </li>
+        <li>
+          <a href="https://facebook.com/nguyenvana" target="_blank" rel="noopener noreferrer"
+             aria-label="Trang Facebook của Nguyễn Văn A (mở trong tab mới)">Facebook</a>
+        </li>
+      </ul>
+    </nav>
+
+    <p>
+      <small>
+        &copy; <time datetime="2026">2026</time> Nguyễn Văn A. Bảo lưu mọi quyền.
+      </small>
+    </p>
+  </footer>
+
+</body>
+</html>
