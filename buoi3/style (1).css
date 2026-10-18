@@ -1,0 +1,514 @@
+/* =========================
+   1. ĐỊNH DẠNG CHUNG CHO TOÀN BỘ TRANG
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #1f2937;
+    background-color: #f3f6fb;
+    margin: 0;
+}
+
+/* =========================
+   2. HEADER & FLEXBOX
+========================= */
+
+body > header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    background: linear-gradient(135deg, #074adc, #da230b);
+
+    color: white;
+    text-align: center;
+
+    padding: 30px 20px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+body > header h1 {
+    font-size: 32px;
+    margin: 0;
+}
+
+body > header > p {
+    margin: 0;
+}
+
+/* =========================
+   3. THANH ĐIỀU HƯỚNG - FLEXBOX
+========================= */
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* =========================
+   4. MAIN - CSS GRID
+========================= */
+
+main#home {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 30px auto;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    gap: 25px;
+}
+
+/* =========================
+   5. CÁC PHẦN NỘI DUNG
+========================= */
+
+#about,
+#projects,
+#skills,
+#contact,
+#services {
+    background-color: white;
+
+    padding: 25px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* About và Projects chiếm toàn bộ chiều ngang */
+
+#about,
+#projects,
+#services {
+    grid-column: 1 / -1;
+}
+
+/* Skills ở cột trái */
+
+#skills {
+    grid-column: 1;
+}
+
+/* Contact ở cột phải */
+
+#contact {
+    grid-column: 2;
+}
+
+/* =========================
+   5.1 SERVICES - CSS GRID
+========================= */
+
+.services-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.service {
+    padding: 20px;
+
+    background-color: #f1f5f9;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.service h3 {
+    margin-top: 0;
+    color: #1f2937;
+}
+
+/* =========================
+   6. TIÊU ĐỀ
+========================= */
+
+h2 {
+    color: #1f2937;
+
+    margin-top: 0;
+    margin-bottom: 15px;
+
+    font-size: 24px;
+}
+
+h3 {
+    color: #4b5563;
+}
+
+/* =========================
+   7. PHẦN GIỚI THIỆU
+========================= */
+
+#about figure {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#about figure img {
+    width: 200px;
+    height: 200px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid #074adc;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+#about figcaption {
+    margin-top: 10px;
+
+    font-weight: bold;
+    color: #4b5563;
+}
+
+#about dl {
+    display: grid;
+
+    grid-template-columns: 120px 1fr;
+
+    gap: 10px;
+}
+
+#about dt {
+    font-weight: bold;
+    color: #1f2937;
+}
+
+#about dd {
+    margin: 0;
+    color: #4b5563;
+}
+
+#about a {
+    color: #074adc;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+#about a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   8. PHẦN DỰ ÁN - CSS GRID
+========================= */
+
+#projects {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+#projects > h2,
+#projects > p {
+    grid-column: 1 / -1;
+}
+
+#projects article {
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    padding: 18px;
+
+    background-color: #fafbff;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+#projects article header {
+    background-color: transparent;
+
+    color: #1f2937;
+
+    text-align: left;
+
+    padding: 0;
+
+    box-shadow: none;
+}
+
+#projects article header h3 {
+    margin: 0;
+
+    color: #1f2937;
+}
+
+#projects article header p {
+    margin: 5px 0;
+
+    color: #6b7280;
+}
+
+#projects article > img {
+    width: 100%;
+    height: 200px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+#projects article ul {
+    padding-left: 20px;
+
+    color: #4b5563;
+}
+
+#projects article footer {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: auto;
+}
+
+#projects article footer a {
+    background-color: #da230b;
+
+    color: white;
+
+    padding: 8px 14px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+#projects article footer a:hover {
+    background-color: #074adc;
+}
+
+/* =========================
+   9. PHẦN KỸ NĂNG - FLEXBOX
+========================= */
+
+#skills section {
+    margin-bottom: 25px;
+}
+
+#skills dl {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+#skills dt {
+    background: linear-gradient(135deg, #074adc, #da230b);
+
+    color: white;
+
+    padding: 8px 14px;
+
+    font-weight: bold;
+
+    border-radius: 6px;
+}
+
+#skills dd {
+    margin: 0;
+
+    padding: 8px 12px;
+
+    background-color: #f1f5f9;
+
+    border-radius: 6px;
+
+    flex: 1 1 200px;
+
+    color: #4b5563;
+}
+
+#skills ul {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    list-style: none;
+
+    padding: 0;
+}
+
+#skills ul li {
+    background-color: #f1f5f9;
+
+    color: #4b5563;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    border: 1px solid #e5e7eb;
+}
+
+/* =========================
+   10. FORM LIÊN HỆ - FLEXBOX
+========================= */
+
+#contact form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+#contact form > div {
+    display: flex;
+
+    flex-direction: column;
+}
+
+#contact label {
+    font-weight: bold;
+
+    margin-bottom: 5px;
+
+    color: #4b5563;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 7px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+}
+
+#contact textarea {
+    resize: vertical;
+}
+
+#contact button {
+    padding: 11px;
+
+    border-radius: 7px;
+
+    border: none;
+
+    background: linear-gradient(135deg, #074adc, #da230b);
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#contact button:hover {
+    background-color: #074adc;
+}
+
+/* =========================
+   11. FOOTER - FLEXBOX
+========================= */
+
+body > footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    background: linear-gradient(135deg, #074adc, #da230b);
+
+    color: white;
+
+    padding: 25px 20px;
+
+    margin-top: 30px;
+}
+
+body > footer address {
+    font-style: normal;
+}
+
+body > footer p {
+    margin: 0;
+}
+
+footer nav ul {
+    display: flex;
+
+    gap: 20px;
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+footer nav a {
+    color: white;
+
+    text-decoration: none;
+}
+
+footer nav a:hover {
+    text-decoration: underline;
+}
