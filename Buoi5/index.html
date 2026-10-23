@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio cá nhân – Giới thiệu về tôi, các dự án tiêu biểu và kỹ năng chuyên môn." />
+  <meta name="author" content="Hà Minh Hiếu" />
+  <title>Portfolio Cá Nhân | Hà Minh Hiếu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="page-loader" role="status" aria-label="Đang tải trang">
+    <div class="loader-logo">HMH</div>
+    <span class="loader-ring"></span>
+    <p>Đang tải portfolio...</p>
+  </div>
+
+  <header>
+    <div class="brand">
+      <div class="brand-mark" aria-label="Logo HMH">HMH</div>
+      <h1 class="profile-name">Hà Minh Hiếu</h1>
+      <p class="profile-job">Front-end Developer & UI Designer</p>
+    </div>
+
+    <nav aria-label="Điều hướng chính">
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="hamburger" aria-label="Mở hoặc đóng menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <ul>
+        <li><a href="#home" aria-current="page">Trang chủ</a></li>
+        <li><a href="#about">Giới thiệu</a></li>
+        <li><a href="#projects">Dự án</a></li>
+        <li><a href="#skills">Kỹ năng</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home">
+
+    <section class="parallax-banner" aria-label="Lời chào">
+      <p class="eyebrow">Chào mừng đến với portfolio của tôi</p>
+      <h2>Tôi là một Web Developer<span class="typing-cursor">...</span></h2>
+      <p>Biến ý tưởng thành những trải nghiệm web nhanh, đẹp và dễ sử dụng.</p>
+    </section>
+
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">Giới thiệu</h2>
+      <figure>
+        <img
+          src="assets/images/avatar.jpg"
+          alt="Ảnh chân dung của Hà Minh Hiếu"
+          width="200"
+          height="200"
+        />
+        <figcaption>
+          <strong class="profile-name">Hà Minh Hiếu</strong>
+          <span class="profile-job">Front-end Developer & UI Designer</span>
+        </figcaption>
+      </figure>
+      <article class="about-content">
+        <p class="about-intro">
+          Tôi là Front-end Developer & UI Designer, yêu thích việc tạo ra những giao diện
+          hiện đại, dễ dùng và có trải nghiệm mượt mà.
+        </p>
+        <div class="about-highlights" aria-label="Thông tin nổi bật">
+          <span>3+ năm kinh nghiệm</span>
+          <span>Front-end & UI</span>
+          <span>Đồng Nai, Việt Nam</span>
+        </div>
+        <a class="about-email" href="#">Email của bạn</a>
+        <a class="about-cv" href="#" download>Tải CV của tôi</a>
+      </article>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Dự án tiêu biểu</h2>
+      <p>Một số dự án tôi đã xây dựng và đóng góp:</p>
+
+      <article aria-labelledby="project1-title">
+        <header>
+          <h3 id="project1-title">Website Thương mại điện tử – ShopNow</h3>
+          <p>
+            <time datetime="2024-06">Tháng 6, 2024</time> –
+            <span>Dự án cá nhân</span>
+          </p>
+        </header>
+        <img src="assets/images/project-shopnow.svg"
+             alt="Ảnh chụp màn hình giao diện trang chủ của dự án ShopNow"
+             width="600" height="350" />
+        <p>Nền tảng mua sắm trực tuyến hỗ trợ đầy đủ luồng từ duyệt sản phẩm,
+           thêm vào giỏ hàng đến thanh toán.</p>
+        <ul>
+          <li>HTML5 & CSS3</li>
+          <li>JavaScript (Vanilla)</li>
+          <li>REST API</li>
+        </ul>
+        <footer>
+          <a class="project-demo" href="https://shopnow-demo.example.com" target="_blank" rel="noopener noreferrer">Xem Demo</a>
+          <a class="project-github" href="https://github.com/nguyenvana/shopnow" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </footer>
+      </article>
+
+      <article aria-labelledby="project2-title">
+        <header>
+          <h3 id="project2-title">Ứng dụng Quản lý Công việc – TaskFlow</h3>
+          <p><time datetime="2023-11">Tháng 11, 2023</time> – <span>Dự án nhóm</span></p>
+        </header>
+        <img src="assets/images/project-taskflow.svg"
+             alt="Ảnh chụp màn hình bảng Kanban của ứng dụng TaskFlow"
+             width="600" height="350" />
+        <p>Ứng dụng quản lý công việc theo phương pháp Kanban, hỗ trợ làm việc nhóm thời gian thực.</p>
+        <ul>
+          <li>React.js</li>
+          <li>Node.js & Express</li>
+          <li>WebSocket</li>
+          <li>MongoDB</li>
+        </ul>
+        <footer>
+          <a class="project-demo" href="https://taskflow-demo.example.com" target="_blank" rel="noopener noreferrer">Xem Demo</a>
+          <a class="project-github" href="https://github.com/nguyenvana/taskflow" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </footer>
+      </article>
+
+      <article aria-labelledby="project3-title">
+        <header>
+          <h3 id="project3-title">Blog Cá nhân – DevNotes</h3>
+          <p><time datetime="2023-05">Tháng 5, 2023</time> – <span>Dự án cá nhân</span></p>
+        </header>
+        <img src="assets/images/project-devnotes.svg"
+             alt="Ảnh chụp màn hình trang danh sách bài viết của DevNotes"
+             width="600" height="350" />
+        <p>Blog kỹ thuật đạt điểm Lighthouse <strong>100/100</strong> về hiệu suất và khả năng tiếp cận.</p>
+        <ul>
+          <li>Next.js (Static Export)</li>
+          <li>Markdown / MDX</li>
+          <li>Vercel Hosting</li>
+        </ul>
+        <footer>
+          <a class="project-demo" href="https://devnotes.example.com" target="_blank" rel="noopener noreferrer">Xem Blog</a>
+          <a class="project-github" href="https://github.com/nguyenvana/devnotes" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </footer>
+      </article>
+    </section>
+
+    <section id="services">
+      <h2>Dịch vụ</h2>
+      <div class="services-container">
+        <div class="service">
+          <h3>Web Development</h3>
+          <p>Xây dựng website hiện đại và responsive.</p>
+        </div>
+        <div class="service">
+          <h3>UI/UX Design</h3>
+          <p>Thiết kế giao diện trực quan và dễ sử dụng.</p>
+        </div>
+        <div class="service">
+          <h3>Mobile Development</h3>
+          <p>Phát triển ứng dụng dành cho thiết bị di động.</p>
+        </div>
+        <div class="service">
+          <h3>SEO Optimization</h3>
+          <p>Tối ưu website cho công cụ tìm kiếm.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="team-card" aria-labelledby="team-heading">
+      <h2 id="team-heading">Thẻ nhân sự</h2>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <article class="flip-card-front">
+            <div class="team-avatar" aria-hidden="true">HH</div>
+            <h3 class="profile-name">Hà Minh Hiếu</h3>
+            <p class="profile-job">Front-end Developer</p>
+            <span class="flip-hint">Di chuột để xem liên hệ</span>
+          </article>
+          <article class="flip-card-back">
+            <h3>Liên hệ với tôi</h3>
+            <p>Sẵn sàng đồng hành cùng bạn trong dự án tiếp theo.</p>
+            <a href="#">Email của bạn</a>
+            <a class="footer-phone" href="#">Số điện thoại của bạn</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Kỹ năng chuyên môn</h2>
+      <div class="skill-bars" aria-label="Mức độ thành thạo">
+        <div class="skill-bar">
+          <div class="skill-bar-label"><span>HTML</span><strong>90%</strong></div>
+          <div class="skill-bar-track"><span style="--skill-level: 90%"></span></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-bar-label"><span>CSS</span><strong>85%</strong></div>
+          <div class="skill-bar-track"><span style="--skill-level: 85%"></span></div>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-bar-label"><span>JavaScript</span><strong>80%</strong></div>
+          <div class="skill-bar-track"><span style="--skill-level: 80%"></span></div>
+        </div>
+      </div>
+
+      <section aria-labelledby="skills-frontend">
+        <h3 id="skills-frontend">Ngôn ngữ & Công nghệ Front-end</h3>
+        <dl>
+          <dt>HTML5</dt><dd>Thành thạo – Semantic HTML, Accessibility (WCAG 2.1)</dd>
+          <dt>CSS3 / SCSS</dt><dd>Thành thạo – Flexbox, Grid, Responsive Design</dd>
+          <dt>JavaScript (ES6+)</dt><dd>Thành thạo – DOM, Async/Await, Fetch API</dd>
+          <dt>React.js</dt><dd>Khá – Hooks, Context API, React Router</dd>
+          <dt>Next.js</dt><dd>Trung bình – SSR, SSG, App Router</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="skills-tools">
+        <h3 id="skills-tools">Công cụ & Quy trình làm việc</h3>
+        <dl>
+          <dt>Git & GitHub</dt><dd>Thành thạo – Branching, Pull Request, Code Review</dd>
+          <dt>Figma</dt><dd>Khá – UI Design, Prototyping, Design Handoff</dd>
+          <dt>Node.js / npm</dt><dd>Trung bình – Quản lý dự án và phụ thuộc</dd>
+          <dt>REST API</dt><dd>Thành thạo – Tích hợp, xử lý dữ liệu JSON</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="skills-soft">
+        <h3 id="skills-soft">Kỹ năng mềm</h3>
+        <ul>
+          <li>Làm việc nhóm và giao tiếp hiệu quả</li>
+          <li>Tư duy giải quyết vấn đề (Problem-solving)</li>
+          <li>Quản lý thời gian và ưu tiên công việc</li>
+          <li>Học hỏi liên tục và thích nghi nhanh</li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Liên hệ</h2>
+      <p>Bạn có dự án thú vị hoặc muốn hợp tác? Hãy gửi tin nhắn cho tôi!</p>
+      <form action="#" method="POST"
+            novalidate aria-label="Biểu mẫu liên hệ">
+        <div>
+          <label for="contact-name">Họ và tên <abbr title="Bắt buộc">*</abbr></label>
+          <input type="text" id="contact-name" name="name" required
+                 autocomplete="name" placeholder="Nguyễn Thị B" aria-required="true" />
+        </div>
+        <div>
+          <label for="contact-email">Địa chỉ Email <abbr title="Bắt buộc">*</abbr></label>
+          <input type="email" id="contact-email" name="email" required
+                 autocomplete="email" placeholder="nguyenthib@email.com" aria-required="true" />
+        </div>
+        <div>
+          <label for="contact-subject">Chủ đề</label>
+          <input type="text" id="contact-subject" name="subject"
+                 placeholder="Đề nghị hợp tác dự án" />
+        </div>
+        <div>
+          <label for="contact-message">Nội dung tin nhắn <abbr title="Bắt buộc">*</abbr></label>
+          <textarea id="contact-message" name="message" required
+                    rows="6" placeholder="Nội dung chi tiết..." aria-required="true"></textarea>
+        </div>
+        <button type="submit">Gửi tin nhắn</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <address>
+      <p>
+        <strong>Hà Minh Hiếu</strong><br />
+        Đồng Nai, Việt Nam<br />
+        <a href="#">Email của bạn</a><br />
+        <a href="#">Số điện thoại của bạn</a>
+      </p>
+    </address>
+    <nav aria-label="Mạng xã hội">
+      <ul>
+        <li>
+          <a href="#" target="_blank" rel="noopener noreferrer"
+             aria-label="Trang GitHub của Hà Minh Hiếu (mở trong tab mới)">GitHub</a>
+        </li>
+        <li>
+          <a href="#" target="_blank" rel="noopener noreferrer"
+             aria-label="Trang LinkedIn của Hà Minh Hiếu (mở trong tab mới)">LinkedIn</a>
+        </li>
+        <li>
+          <a href="#" target="_blank" rel="noopener noreferrer"
+             aria-label="Trang Twitter của Hà Minh Hiếu (mở trong tab mới)">Twitter / X</a>
+        </li>
+        <li>
+          <a href="#" target="_blank" rel="noopener noreferrer"
+             aria-label="Trang Facebook của Hà Minh Hiếu (mở trong tab mới)">Facebook</a>
+        </li>
+      </ul>
+    </nav>
+    <p>
+      <small>
+        &copy; <time datetime="2026">2026</time> Hà Minh Hiếu. Bảo lưu mọi quyền.
+      </small>
+    </p>
+  </footer>
+
+  <a class="floating-contact" href="#contact" aria-label="Đi đến phần liên hệ">Liên hệ</a>
+
+</body>
+</html>
