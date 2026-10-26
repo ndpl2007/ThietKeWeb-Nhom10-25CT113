@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" role="img">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#071a3d"/>
+      <stop offset=".5" stop-color="#123c72"/>
+      <stop offset="1" stop-color="#0b1022"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#6366f1"/>
+    </linearGradient>
+    <pattern id="dots" width="48" height="48" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#93c5fd" opacity=".35"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="700" fill="url(#base)"/>
+  <rect width="1600" height="700" fill="url(#dots)"/>
+  <circle cx="230" cy="120" r="180" fill="#38bdf8" opacity=".12"/>
+  <circle cx="1370" cy="560" r="260" fill="#818cf8" opacity=".12"/>
+  <g transform="translate(430 125)">
+    <rect x="0" y="0" width="740" height="410" rx="24" fill="#0f172a" stroke="#94a3b8" stroke-width="8"/>
+    <rect x="30" y="30" width="680" height="340" rx="10" fill="url(#screen)"/>
+    <circle cx="370" cy="18" r="5" fill="#cbd5e1"/>
+    <g fill="#e0f2fe" opacity=".9">
+      <rect x="82" y="95" width="250" height="18" rx="9"/>
+      <rect x="82" y="145" width="420" height="13" rx="6"/>
+      <rect x="82" y="180" width="330" height="13" rx="6"/>
+      <rect x="82" y="250" width="95" height="42" rx="8"/>
+      <rect x="195" y="250" width="95" height="42" rx="8"/>
+      <rect x="308" y="250" width="95" height="42" rx="8"/>
+    </g>
+    <path d="M-75 465h890l-105 55H30z" fill="#1e293b" stroke="#64748b" stroke-width="6"/>
+    <rect x="300" y="465" width="140" height="18" rx="9" fill="#64748b"/>
+  </g>
+  <g fill="#bae6fd" opacity=".8" font-family="monospace" font-size="28">
+    <text x="115" y="570">&lt;/&gt;</text>
+    <text x="1300" y="145">{ }</text>
+    <text x="125" y="230">01</text>
+    <text x="1370" y="430">CSS</text>
+  </g>
+</svg>
